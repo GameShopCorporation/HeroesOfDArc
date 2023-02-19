@@ -18,9 +18,7 @@ import com.jme3.util.BufferUtils;
 import java.io.File;
 
 /**
- * This is the Main Class of your Game. You should only do initialization here.
- * Move your Logic into AppStates or Controls
- * @author normenhansen
+ * @author lyndenjayevans
  */
 public class AppMain extends SimpleApplication {
 

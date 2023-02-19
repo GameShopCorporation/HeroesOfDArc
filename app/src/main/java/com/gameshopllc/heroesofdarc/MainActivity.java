@@ -13,14 +13,7 @@ import com.jme3.app.jmeSurfaceView.OnRendererCompleted;
 import com.jme3.system.AppSettings;
 
 /**
- * <b>NB: Please Open this example <u>root module</u> using Android Studio; because android build scripts are different from java builds.</b>
- * <br/>
- * An Android Example that demonstrates : How to use a simple game#{@link AppMain}
- * on #{@link com.jme3.app.jmeSurfaceView.JmeSurfaceView} inside an #{@link androidx.appcompat.app.AppCompatActivity}.
- * <br>
- * <b>Note : use #{@link AppCompatActivity#setRequestedOrientation(int)} and #{} for LandScape mode or specify that under the <activity> activity tag xml.</b>
- *
- * @author pavl_g
+ * @author lyndenjayevans
  */
 public final class MainActivity extends AppCompatActivity implements OnRendererCompleted, OnExceptionThrown {
     @Override
@@ -38,31 +31,17 @@ public final class MainActivity extends AppCompatActivity implements OnRendererC
         jmeSurfaceView.startRenderer(500);
     }
 
-    /**
-     * Fired when exception/error/(concretes of #{@link Throwable} class) is thrown.
-     *
-     * @param e the thrown error or exception
-     */
+
     @Override
     public void onExceptionThrown(Throwable e) {
         Toast.makeText(MainActivity.this, "User's Delay Finished w/ exception : " + e.getMessage(), Toast.LENGTH_SHORT).show();
     }
-    /**
-     * Fired when the user delay in ms is up #{@link JmeSurfaceView#startRenderer(int)}.
-     *
-     * @param application the current jme game instance
-     * @param appSettings the current game settings
-     */
+
     @Override
     public void onRenderCompletion(LegacyApplication application, AppSettings appSettings) {
         Toast.makeText(MainActivity.this, "User's Delay Finished w/o errors !" + application.getContext() + " " + appSettings.getFrameRate(), Toast.LENGTH_SHORT).show();
     }
 
-    /**
-     * Fired when the screen has/hasNo touch/mouse focus.
-     *
-     * @param hasFocus specify whether the current screen has focus or not
-     */
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         /*get the view from the current activity*/
